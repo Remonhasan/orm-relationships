@@ -5,7 +5,7 @@ This project demonstrates a simple **one-to-one** relationship between the `User
 ## Features
 
 - One-to-One Relationship between `User` and `Profile`
-- One-to-many Relationship
+- One-to-many Relationship between `Post` and `Comment`
 - many-to-many Relationship
 
 ## Project Setup
@@ -57,13 +57,13 @@ php artisan migrate
 php artisan db:seed
 ```
 ### One-to-One Relationship Diagram
-The following diagram illustrates the one-to-one relationship between the Users and Profiles tables:
+The following diagram illustrates the one-to-one relationship between the `Users`and `Profiles` tables:
 ### Users and Profiles Relationship
 
 | Users         |               | Profiles       |
 |---------------|---------------|----------------|
 | **name**      |               | **id**         |
-| **id**        |<--------------| **user_id**    |
+| **id**        |<------------->| **user_id**    |
 | **email**     |               | **bio**        |
 | **password**  |               | **created_at** |
 |               |               | **updated_at** |
@@ -75,5 +75,37 @@ $profile = $user->profile; // Access the user's profile
 
 $profile = Profile::find(1);
 $user = $profile->user; // Access the profile's user
+```
+### One-to-Many Relationship Diagram
+The following diagram illustrates the one-to-many relationship between the `Posts` and `Comments` tables:
+### Posts and Comments Relationship
+
+| Posts         |               | Comments       |
+|---------------|---------------|----------------|
+| **title**     |               | **id**         |
+| **id**        |<------------>>| **post_id**    |
+| **content**   |               | **comment**    |
+
+
+### Access Relationship
+```php
+// Find all comments by Post 
+$post = Post::find(1); // Get the post with ID 1
+
+// Access comments associated with the post
+$comments = $post->comments;
+
+foreach ($comments as $comment) {
+    echo $comment->comment . "<br>";
+}
+
+
+// Find Post by Comment  
+$comment = Comment::find(1); // Get the comment with ID 1
+
+// Access the post associated with the comment
+$post = $comment->post;
+
+echo $post->title; // Outputs the title of the post
 ```
 
