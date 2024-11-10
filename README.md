@@ -58,13 +58,14 @@ php artisan db:seed
 ```
 ### One-to-One Relationship Diagram
 The following diagram illustrates the one-to-one relationship between the Users and Profiles tables:
-+------------+     1    +----------------+
-|   Users    |------------|   Profiles   |
-+------------+            +----------------+
-| id         |<---------+ | id             |
-| name       |            | user_id        |
-| email      |            | bio            |
-| password   |            | created_at     |
-+------------+            | updated_at     |
-                          +----------------+
+### Users and Profiles Relationship
+
+| Users         |               | Profiles       |
+|---------------|---------------|----------------|
+| **id**        |<------------- | **id**         |
+| **name**      |               | **user_id**    |
+| **email**     |               | **bio**        |
+| **password**  |               | **created_at** |
+|               |               | **updated_at** |
+
 
