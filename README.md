@@ -5,8 +5,8 @@ This project demonstrates a simple **one-to-one** relationship between the `User
 ## Features
 
 - One-to-One Relationship between `User` and `Profile`
-- Laravel migrations, factories, and seeders for easy setup
-- Basic CRUD operations for `User` and `Profile` models
+- One-to-many Relationship
+- many-to-many Relationship
 
 ## Project Setup
 
