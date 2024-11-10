@@ -10,12 +10,13 @@ class UserController extends Controller
 {
     public function index()
     {
-        $user = User::find(1);
-        $profile = $user->profile; // Access the user's profile
-        dd($profile);
+        // $user = User::find(1);
+        // $profile = $user->profile; // Access the user's profile
+       
 
         $profile = Profile::find(1);
         $user = $profile->user; // Access the profile's user
+        dd($user);
 
     }
 }

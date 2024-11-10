@@ -13,7 +13,12 @@ class Profile extends Model
         'user_id',
         'bio',
     ];
-
+    
+    /**
+     * One to one Relationship
+     *
+     * @return void
+     */
     public function user()
     {
         return $this->belongsTo(User::class);
