@@ -62,8 +62,8 @@ The following diagram illustrates the one-to-one relationship between the Users 
 
 | Users         |               | Profiles       |
 |---------------|---------------|----------------|
-| **id**        |<------------- | **id**         |
-| **name**      |               | **user_id**    |
+| **name**      |               | **id**         |
+| **id**        |<--------------| **user_id**    |
 | **email**     |               | **bio**        |
 | **password**  |               | **created_at** |
 |               |               | **updated_at** |
