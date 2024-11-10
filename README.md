@@ -108,4 +108,21 @@ $post = $comment->post;
 
 echo $post->title; // Outputs the title of the post
 ```
-
+### Many-to-Many Relationship Diagram
+The following diagram illustrates the one-to-many relationship between the `Roles`, `users` and `role_users` tables:
+### `Roles`, `users` and `role_users` Relationship
+```php
+// User.php
+public function roles()
+{
+    return $this->belongsToMany(Role::class, 'role_users');
+}
+```
+```php
+// Role.php
+ // Define the many-to-many relationship
+public function users()
+{
+    return $this->belongsToMany(User::class);
+}
+```
