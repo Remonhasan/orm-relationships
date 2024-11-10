@@ -21,12 +21,50 @@ Make sure you have the following installed:
 
 ### Installation
 
-# Clone the repository
+1. **Clone the repository**
 
 ```bash
 git clone https://github.com/Remonhasan/orm-relationships.git
 cd your-repo-name
-
-# Install Dependencies
+```
+**Clone the repository**
 ```bash
 composer install
+```
+**Setup env**
+```bash
+cp .env.example .env
+```
+**Generate Key**
+```bash
+php artisan key:generate
+```
+**Setup Database**
+```bash
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=your_database_name
+DB_USERNAME=your_database_username
+DB_PASSWORD=your_database_password
+```
+**Run Migration**
+```bash
+php artisan migrate
+```
+**Seed Database**
+```bash
+php artisan db:seed
+```
+### One-to-One Relationship Diagram
+The following diagram illustrates the one-to-one relationship between the Users and Profiles tables:
++------------+     1    +----------------+
+|   Users    |------------|   Profiles   |
++------------+            +----------------+
+| id         |<---------+ | id             |
+| name       |            | user_id        |
+| email      |            | bio            |
+| password   |            | created_at     |
++------------+            | updated_at     |
+                          +----------------+
+
