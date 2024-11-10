@@ -21,11 +21,12 @@ Make sure you have the following installed:
 
 ### Installation
 
-1. **Clone the repository:**
+# Clone the repository
 
 ```bash
 git clone https://github.com/Remonhasan/orm-relationships.git
 cd your-repo-name
 
-2. **Install Dependencies:**
+# Install Dependencies
+```bash
 composer install
