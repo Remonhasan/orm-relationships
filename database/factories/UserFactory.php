@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
@@ -33,6 +34,15 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password')
         ];
+    }
+
+    public function withRoles()
+    {
+        return $this->afterCreating(function (User $user) {
+            // Assign random roles to the user
+            $roles = Role::inRandomOrder()->take(2)->pluck('id');
+            $user->roles()->attach($roles);
+        });
     }
 
     /**
