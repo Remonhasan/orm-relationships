@@ -68,4 +68,12 @@ The following diagram illustrates the one-to-one relationship between the Users 
 | **password**  |               | **created_at** |
 |               |               | **updated_at** |
 
+### Access Relationship
+```php
+$user = User::find(1);
+$profile = $user->profile; // Access the user's profile
+
+$profile = Profile::find(1);
+$user = $profile->user; // Access the profile's user
+```
 
