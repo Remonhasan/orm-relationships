@@ -6,7 +6,7 @@ This project demonstrates a simple **one-to-one** relationship between the `User
 
 - One-to-One Relationship between `User` and `Profile`
 - One-to-many Relationship between `Post` and `Comment`
-- many-to-many Relationship
+- many-to-many Relationship between 'Role' and 'User'
 
 ## Project Setup
 
